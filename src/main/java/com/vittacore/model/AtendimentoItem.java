@@ -1,13 +1,14 @@
 package com.vittacore.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.vittacore.shared.enums.TipoAtendimentoEnum;
 import jakarta.persistence.*;
-
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "ATENDIMENTOITEM")
@@ -22,9 +23,6 @@ public class AtendimentoItem {
     @Column(columnDefinition = "TEXT")
     private String observacao;
 
-    @Column(name = "imagem", length = 500)
-    private String imagem;
-
     @Column(name = "pacienteatendido")
     private Boolean pacienteAtendido = false;
 
@@ -38,8 +36,11 @@ public class AtendimentoItem {
     @Column(name = "tipoatendimento", length = 30)
     private TipoAtendimentoEnum tipoAtendimento;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "atendimento_id", nullable = false)
+    @JsonIgnoreProperties("itens")
     private Atendimento atendimento;
+
+    @OneToMany(mappedBy = "atendimentoItem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<AtendimentoItemImagem> atendimentoItemImagemList;
 }

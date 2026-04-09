@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @RestController
-@RequestMapping("/atendimentoItens")
+@RequestMapping("/atendimentoitens")
 public class AtendimentoItemResource extends BaseCrudResource<AtendimentoItem, Integer> {
 
     private final AtendimentoItemService service;

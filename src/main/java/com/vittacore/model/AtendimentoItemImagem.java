@@ -21,6 +21,6 @@ public class AtendimentoItemImagem {
     private String descricao;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "atendimentoitem", nullable = false)
+    @JoinColumn(name = "atendimento_item_id", nullable = false)
     private AtendimentoItem atendimentoItem;
 }

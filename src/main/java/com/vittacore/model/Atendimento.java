@@ -1,6 +1,7 @@
 package com.vittacore.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.vittacore.shared.enums.StatusPagamentoEnum;
 import com.vittacore.shared.enums.TipoAtendimentoEnum;
 import jakarta.persistence.*;
@@ -62,7 +63,6 @@ public class Atendimento {
     @JoinColumn(name = "unidadeatendimento", nullable = false)
     private UnidadeAtendimento unidadeAtendimento;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "atendimento", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "atendimento", cascade = CascadeType.ALL)
     private List<AtendimentoItem> itens;
 }
