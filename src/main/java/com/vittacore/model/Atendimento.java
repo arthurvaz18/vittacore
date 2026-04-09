@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -29,11 +30,11 @@ public class Atendimento {
     @Column(length = 30, nullable = false)
     private TipoAtendimentoEnum tipo;
 
-    @Column(name = "datahorainicio")
-    private LocalDateTime dataHoraInicio;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataHoraInicio;
 
-    @Column(name = "datahorafim")
-    private LocalDateTime dataHoraFim;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataHoraFim;
 
     @Column(precision = 10, scale = 2)
     private BigDecimal valor;

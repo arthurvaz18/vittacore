@@ -136,6 +136,16 @@ public abstract class BaseQueryBuilder<F, T> {
         return jpql.toString();
     }
 
+    protected void andBetweenFlexible(String field, Object start, Object end) {
+        if (start != null && end != null) {
+            andBetween(field, start, end);
+        } else if (start != null) {
+            andGreaterOrEquals(field, start);
+        } else if (end != null) {
+            andLessOrEquals(field, end);
+        }
+    }
+
     private String generateParam(String field) {
         return field.replace(".", "_") + "_" + params.size();
     }
