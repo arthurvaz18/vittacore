@@ -1,6 +1,5 @@
 package com.vittacore.model.vo;
 
-import com.vittacore.model.Atendimento;
 import com.vittacore.shared.enums.ProfissionalGeneroEnum;
 import com.vittacore.shared.enums.TipoProfissaoEnum;
 import com.vittacore.shared.enums.TipoRegistroEnum;
@@ -45,5 +44,5 @@ public class ProfissionalFilterVO {
 
     private LocalDateTime ultimoLogin;
 
-    private List<Atendimento> atendimentos;
+    private List<AtendimentoFilterVO> atendimentoFilterVOList;
 }

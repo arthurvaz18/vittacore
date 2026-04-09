@@ -1,7 +1,6 @@
 package com.vittacore.model.vo;
 
 import com.vittacore.model.AtendimentoItem;
-import com.vittacore.model.UnidadeAtendimento;
 import com.vittacore.shared.enums.StatusPagamentoEnum;
 import com.vittacore.shared.enums.TipoAtendimentoEnum;
 import lombok.Getter;
@@ -35,7 +34,7 @@ public class AtendimentoFilterVO {
 
     private ProfissionalFilterVO profissionalFilterVO;
 
-    private UnidadeAtendimento unidadeAtendimento;
+    private UnidadeAtendimentoFilterVO unidadeAtendimentoFilterVO;
 
     private List<AtendimentoItem> itens;
 }
