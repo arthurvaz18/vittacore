@@ -13,8 +13,6 @@ public interface BaseCrudService<T, ID extends Serializable> {
 
     T findById(ID id);
 
-    List<T> findAll();
-
     void validate(T entity);
 
     void validateDelete(T entity);

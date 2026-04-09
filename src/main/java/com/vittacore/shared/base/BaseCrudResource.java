@@ -34,9 +34,4 @@ public abstract class BaseCrudResource<T, ID extends Serializable> {
         return ResponseEntity.ok(entity);
     }
 
-    @GetMapping
-    public ResponseEntity<List<T>> findAll() {
-        List<T> list = getService().findAll();
-        return ResponseEntity.ok(list);
-    }
 }

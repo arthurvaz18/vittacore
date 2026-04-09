@@ -41,6 +41,12 @@ public abstract class BaseQueryBuilder<F, T> {
         }
     }
 
+    public void reset() {
+        whereClauses.clear();
+        params.clear();
+        orderBy.clear();
+    }
+
     protected void andIn(String field, Collection<?> values) {
         if (values != null && !values.isEmpty()) {
             String param = generateParam(field);

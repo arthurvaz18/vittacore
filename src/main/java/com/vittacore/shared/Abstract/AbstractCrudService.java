@@ -5,7 +5,6 @@ import com.vittacore.shared.base.BaseCrudService;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Transactional(rollbackFor = Throwable.class)
 public abstract class AbstractCrudService<T, ID extends Serializable> implements BaseCrudService<T, ID> {
@@ -47,11 +46,6 @@ public abstract class AbstractCrudService<T, ID extends Serializable> implements
     @Override
     public T findById(ID id) {
         return getRepository().findById(id);
-    }
-
-    @Override
-    public List<T> findAll() {
-        return getRepository().findAll();
     }
 
     protected void beforeCreate(T entity) {}

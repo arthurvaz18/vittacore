@@ -3,7 +3,9 @@ package com.vittacore.camadas.builder;
 import com.vittacore.model.Profissional;
 import com.vittacore.model.vo.ProfissionalFilterVO;
 import com.vittacore.shared.base.BaseQueryBuilder;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProfissionalListQueryBuilder extends BaseQueryBuilder<ProfissionalFilterVO, Profissional> {
 
     public ProfissionalListQueryBuilder() {
