@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: vittacore
+
+  datasource:
+    url: jdbc:postgresql://localhost:5438/vittacore
+    username: vittacore
+    password: vittacore
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
